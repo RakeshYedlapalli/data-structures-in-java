@@ -1,0 +1,133 @@
+Here are some of the most widely used and important sorting techniques in data structures and algorithms, implemented in Java:
+
+1. Selection Sort:
+
+Concept: Repeatedly finds the minimum element in the unsorted part of the array and swaps it with the element at the beginning of the unsorted part.
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+Java Implementation:
+Java
+public
+
+void
+
+selectionSort(int[] arr)
+
+{
+    for (int i = 0; i < arr.length - 1; i++) {
+        int minIndex = i;
+        for (int j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+        swap(arr, i, minIndex);
+    }
+}
+Use code with caution. Learn more
+2. Bubble Sort:
+
+Concept: Repeatedly compares adjacent elements and swaps them if they are in the wrong order, bubbling the largest element to the end of the array in each pass.
+Time Complexity: O(n^2)
+Space Complexity: O(1)
+Java Implementation:
+Java
+public
+
+void
+
+bubbleSort(int[] arr)
+
+{
+    for (int i = 0; i < arr.length - 1; i++) {
+        for (int j = 0; j < arr.length - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1);
+            }
+        }
+    }
+}
+Use code with caution. Learn more
+3. Insertion Sort:
+
+Concept: Builds the sorted array one element at a time by inserting each element into its correct position in the already sorted part of the array.
+Time Complexity: O(n^2) (average/worst case), O(n) (best case)
+Space Complexity: O(1)
+Java Implementation:
+Java
+public void insertionSort(int[] arr)
+
+{
+    for (int i = 1; i < arr.length; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+Use code with caution. Learn more
+4. Merge Sort:
+
+Concept: Divides the array into halves recursively, sorts each half, and then merges the sorted halves back together.
+Time Complexity: O(n log n)
+Space Complexity: O(n)
+Java Implementation:
+Java
+public void
+
+mergeSort(int[] arr)
+
+{
+    if (arr.length > 1) {
+        int mid = arr.length / 2;
+        int[] left = Arrays.copyOfRange(arr, 0, mid);
+        int[] right = Arrays.copyOfRange(arr, mid, arr.length);
+        mergeSort(left);
+        mergeSort(right);
+        merge(arr, left, right);
+    }
+}
+Use code with caution. Learn more
+5. Quick Sort:
+
+Concept: Chooses a pivot element, partitions the array into elements less than or equal to the pivot and elements greater than the pivot, and recursively sorts the two partitions.
+Time Complexity: O(n log n) (average), O(n^2) (worst case)
+Space Complexity: O(log n)
+Java Implementation:
+Java
+public
+
+void
+
+quickSort(int[] arr)
+
+{
+    quickSort(arr, 0, arr.length - 1);
+}
+
+private
+
+void
+
+quickSort(int[] arr, int low, int
+
+high)
+
+{
+    if (low < high) {
+        int pivotIndex = partition(arr, low, high);
+        quickSort(arr, low, pivotIndex - 1);
+        quickSort(arr, pivotIndex + 1, high);
+    }
+}
+Use code with caution. Learn more
+Choosing the Right Sorting Technique:
+
+The best sorting technique to use depends on the specific requirements of your application, considering factors such as:
+
+Size of the input array
+Nature of the data
+https://github.com/anirbanbhat/leetcodechallenge

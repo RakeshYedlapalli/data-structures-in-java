@@ -1,0 +1,9 @@
+Big O Notation:
+
+1. O(1) : Constant Time
+2. O(log n): Logarthemic Time
+3. O(n) : Linear Time
+4. O(n log n) : Linearthmic Time
+5. O(n2): Quadratic Time (It's O of n square)
+6. O(2n) : Exponential Time (It's O of 2 power n)
+7. O(n!) : Factorial Time
